@@ -12,13 +12,13 @@ const navigation = [
 
 export const Header = () => {
     return (
-        <Disclosure as="nav" className="bg-black sticky top-0 z-[9999] font-Anek">
+        <Disclosure as="nav" className="sticky top-0 z-[9999] bg-black">
             {({ open }) => (
                 <>
                 <div>
                     <div className="h-[8vh] w-full grid grid-cols-2 gap-4 content-start px-8">
                         <div className="absolute inset-y-0 left-10 flex items-center">
-                            <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white bg-opacity-50 hover:opacity-100 transition duration-300 ease-in-out">
+                            <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-200 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white bg-opacity-50 hover:opacity-100 transition duration-300 ease-in-out">
                                 <span className="absolute -inset-0.5" />
                                 <span className="sr-only">Open main menu</span>
                                 {open ? (
@@ -27,11 +27,6 @@ export const Header = () => {
                                     <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                                 )}
                             </Disclosure.Button>
-                        </div>
-                        <div className="absolute inset-y-0 right-14 flex items-center">
-                            <a href="/" className="sm:text-2xl text-3xl text-white font-bold hover:text-gray-600 bg-opacity-50 hover:opacity-100 transition duration-300 ease-in-out">
-                                Pete Brooks
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -51,7 +46,7 @@ export const Header = () => {
                                     key={item.name}
                                     as="a"
                                     href={item.href}
-                                    className="text-gray-700 bg-white hover:bg-gray-600 hover:text-white text-center block rounded-md py-7 sm:py-6 font-medium sm:w-1/2 mx-auto transition duration-300 ease-in-out"
+                                    className="text-gray-700 bg-white hover:bg-gray-200 text-center block rounded-md py-7 sm:py-6 font-medium sm:w-1/2 mx-auto transition duration-300 ease-in-out"
                                 >
                                     {item.name}
                                 </Disclosure.Button>

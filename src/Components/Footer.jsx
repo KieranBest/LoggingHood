@@ -6,7 +6,7 @@ export const Footer = () => {
         <MDBFooter className="bg-black" color='white'>
             <div className='flex items-center justify-center text-center h-[8vh] w-'>
             &copy; {new Date().getFullYear()}&nbsp;&nbsp;&nbsp;Copyright&nbsp;&nbsp;&nbsp; {' '}
-                <a href="https://www.bestwebdev.co.uk" target="_blank" className="hover:text-gray-600">
+                <a href="https://www.bestwebdev.co.uk" target="_blank">
                     bestwebdev.co.uk
                 </a>
             </div>
