@@ -4,10 +4,9 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
+    // { name: 'Services', href: '/services' },
     { name: 'Contact', href: '/contact' },
     { name: 'About', href: '/about' },
-    { name: 'Social Media', href: '/socials' }
 ]
 
 export const Header = () => {
@@ -28,6 +27,12 @@ export const Header = () => {
                                 )}
                             </Disclosure.Button>
                         </div>
+                        <div className="absolute inset-y-0 right-14 flex items-center gap-4">
+                            <h3>Get a Free Quote</h3>
+                            <a href="tel:+447474202902" className="sm:text-2xl text-xl text-white font-bold hover:text-gray-600 bg-opacity-50 hover:opacity-100 transition duration-300 ease-in-out">
+                                07474202902
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <Transition
@@ -46,9 +51,8 @@ export const Header = () => {
                                     key={item.name}
                                     as="a"
                                     href={item.href}
-                                    className="text-gray-700 bg-white hover:bg-gray-200 text-center block rounded-md py-7 sm:py-6 font-medium sm:w-1/2 mx-auto transition duration-300 ease-in-out"
-                                >
-                                    {item.name}
+                                    className="text-gray-700 bg-white hover:bg-gray-200 text-center block rounded-md py-7 sm:py-6 font-medium sm:w-1/2 mx-auto transition duration-300 ease-in-out">
+                                        {item.name}
                                 </Disclosure.Button>
                             ))}
                         </div>
