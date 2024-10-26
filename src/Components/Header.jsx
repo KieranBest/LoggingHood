@@ -51,7 +51,7 @@ export const Header = () => {
                                     key={item.name}
                                     as="a"
                                     href={item.href}
-                                    className="text-gray-700 bg-white hover:bg-gray-200 text-center block rounded-md py-7 sm:py-6 font-medium sm:w-1/2 mx-auto transition duration-300 ease-in-out">
+                                    className="text-black bg-white hover:bg-gray-200 text-center block rounded-md py-7 sm:py-6 font-medium sm:w-1/2 mx-auto transition duration-300 ease-in-out">
                                         {item.name}
                                 </Disclosure.Button>
                             ))}
