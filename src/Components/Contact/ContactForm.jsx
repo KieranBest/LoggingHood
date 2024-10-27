@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import emailjs from '@emailjs/browser';
 import swal from "sweetalert2";
 
-import { getImageUrl } from "../../utils";
+import contacts from "../../Data/Contacts.json"
 
 export const ContactForm = () => {
 
@@ -11,7 +11,7 @@ export const ContactForm = () => {
     const data = location.state;
     const form = useRef();
 
-    console.log(data)
+    // console.log(data)
     //{ useLocation().state }
 
     const checkValidation = (e) => {
@@ -53,7 +53,8 @@ export const ContactForm = () => {
         emailjs
         .sendForm(
             import.meta.env.VITE_EMAIL_SERVICE_ID, 
-            import.meta.env.VITE_EMAIL_TEMPLATE_ID, 
+            // import.meta.env.VITE_EMAIL_TEMPLATE_ID, 
+
             form.current, 
             import.meta.env.VITE_EMAIL_USER_KEY,
         )
@@ -67,12 +68,26 @@ export const ContactForm = () => {
         );
     };
 
+    const [emailRecipient, setRecipient] = useState(data);
+
     return (
         <section className="z-0" id="intro">
             <div className="flex flex-col items-center justify-center mt-8 mb-4 py-24">
                 <form ref={form} onSubmit={checkValidation} className=" w-10/12 max-w-xl">
-                    <div>
-                        
+                    <div className="sm:flex sm:items-center mb-6">
+                        <select
+                            value={emailRecipient}
+                            onChange={e => setRecipient(e.target.value)}
+                        >
+                            {contacts.map(contacts => (
+                                
+                                    <option key={contacts.id} value={contacts.id}>
+                                        {contacts.title}
+                                    </option>
+                                
+                            ))}
+                        </select>
+                        <p>{emailRecipient}</p>
                     </div>
                     <div className="sm:flex sm:items-center mb-6">
                         <div className="w-full">
