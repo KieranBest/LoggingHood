@@ -2,7 +2,7 @@ import React from "react";
 
 import { Intro } from "../Components/Home/Intro";
 import { About } from "../Components/Home/About";
-import { Contact } from "../Components/Home/Contact"
+import { Contact } from "../Components/Home/Contact";
 
 export const Home = () => {
     return (
